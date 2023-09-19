@@ -1,0 +1,8 @@
+{
+	"oj-path": "/home/user/.asdf/shims/oj",
+	"default-contest-dirname-format": "contents/{ContestID}",
+	"default-task-dirname-format": "{tasklabel}",
+	"default-test-dirname-format": "tests",
+	"default-task-choice": "all",
+	"default-template": "python"
+}
