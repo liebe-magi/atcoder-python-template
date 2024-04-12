@@ -1,5 +1,5 @@
 {
-	"oj-path": "/home/user/.asdf/shims/oj",
+	"oj-path": "/usr/local/bin/oj",
 	"default-contest-dirname-format": "contents/{ContestID}",
 	"default-task-dirname-format": "{tasklabel}",
 	"default-test-dirname-format": "tests",

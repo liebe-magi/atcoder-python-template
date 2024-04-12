@@ -1,6 +1,7 @@
 {
     "name": "AtCoder Python",
     "image": "liebemagi/atcoder-python:latest",
+    //"image": "liebemagi/atcoder-python:latest-pypy",
     "customizations": {
         // Configure properties specific to VS Code.
         "vscode": {
@@ -27,9 +28,9 @@
         {
             "type": "bind",
             "source": "${localWorkspaceFolder}/.vscode",
-            "target": "/home/user/atcoder/.vscode"
+            "target": "/home/user/work/.vscode"
         }
     ],
-    "workspaceMount": "source=${localWorkspaceFolder}/contents,target=/home/user/atcoder/contents,type=bind",
-    "workspaceFolder": "/home/user/atcoder"
+    "workspaceMount": "source=${localWorkspaceFolder}/contents,target=/home/user/work/contents,type=bind",
+    "workspaceFolder": "/home/user/work"
 }

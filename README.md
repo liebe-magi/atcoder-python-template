@@ -6,7 +6,7 @@ AtCoder用Python DevContainer環境
 
 - [VSCode](https://code.visualstudio.com/)のDevContainer機能を用いたローカルから完全分離された仮想環境の提供
 - [atcoder-cli](https://github.com/Tatamo/atcoder-cli)と[oj](https://github.com/online-judge-tools/oj)を用いた解答用ファイル生成、ローカルでのテストケースチェック、提出
-- [poethepoet](https://github.com/nat-n/poethepoet)による共通化されたコマンドの提供
+- 独自コマンド(`atc`)による共通化されたコマンドの提供
 
 ## Usage
 
@@ -23,6 +23,11 @@ AtCoder用Python DevContainer環境
 
 ```
 docker pull liebemagi/atcoder-python:latest
+```
+
+- PyPy用環境を構築したい場合は以下のコマンドでpullし、`.devcontainer/devcontainer.json`の`image`を変更
+```
+docker pull liebemagi/atcoder-python:latest-pypy
 ```
 
 #### 開発コンテナを起動
@@ -48,28 +53,37 @@ oj login https://atcoder.jp/
 
 ### 使い方
 
-#### コンテスト用解答ファイルの生成 (`new`, `n`)
+#### コンテスト用解答ファイルの生成
 
 ```
-poe new [contestID]
+atc new [contestID]
+
+# Example
+atc new abc001
 ```
 
-#### テストケースのローカルチェック (`test`, `t`)
+#### テストケースのローカルチェック
 
 ```
-poe test [contestID] [taskID]
+atc run [contestID]-[taskID]
+
+# Example
+atc run abc001-a
 ```
 
-#### 提出 (`submit`, `s`)
+#### 提出
 
 ```
-poe submit [contestID] [taskID]
-```
+atc run [contestID]-[taskID] --submit
 
-デフォルトではPyPyとして提出されるが、CPythonで提出したい場合は以下の通り
+# Example
+atc run abc001-a --submit
 
-```
-poe submit [contestID] [taskID] cpython
+# -sでも可
+atc run abc001-a -s
+
+# PyPyで提出する場合
+atc run abc001-a -s --pypy
 ```
 
 ### テンプレートファイルの編集
