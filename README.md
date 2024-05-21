@@ -25,11 +25,6 @@ AtCoder用Python DevContainer環境
 docker pull liebemagi/atcoder-python:latest
 ```
 
-- PyPy用環境を構築したい場合は以下のコマンドでpullし、`.devcontainer/devcontainer.json`の`image`を変更
-```
-docker pull liebemagi/atcoder-python:latest-pypy
-```
-
 #### 開発コンテナを起動
 
 - `Use this template`をクリックし、自身のリポジトリを作成し、ローカルにクローン
